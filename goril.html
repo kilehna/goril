@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>goril</title>
     <style>
         body{
             background-color: azure;
         }
         #text{
             background-color: white;
-            border: tomato 1px solid;
+            border: lightblue 1px solid;
             width: 640px
         }
         p{
@@ -24,21 +24,61 @@
 </head>
 <body>
     <h1>고릴라코 미연시</h1>
-    <img src="images/maxresdefault.jpg" width="640" height="400">
-    <div id=text>
-    <p>야생의 고릴라와 만난 당신...</p>
-    <p>그런데 놀랍게도 이 고릴라는 사람의 말을 하는 것이 아닌가?</p>
-    <p>고릴라는 스스로를 "고릴라코"라고 소개했다.</p>
-    <p>당신의 반응은?</p>
-    </div>
+    <button id=start>시작하기</button>
+    <div id=images></div>
+    <div id=text></div>
     <div id=btn>
         <br>
         <br>
-        <button id="ok">안녕 고릴라코?^^</button>
-        <button id="no">으악! 징그러워!!</button>
     </div>
     <script>
+        var cli = false
+        document.querySelector("#start").addEventListener("click",function(){
+            if(cli == true){return;}
+            cli = true
+            let img1= document.createElement("img");
+             img1.setAttribute("src","images/maxresdefault.jpg");
+             img1.setAttribute("width",640);
+             img1.setAttribute("height",400);
+             document.querySelector("#images").append(img1);
 
+            let p1 = document.createElement("p");
+             p1.innerText="야생의 고릴라와 만난 당신...";
+             document.querySelector("#text").append(p1)
+
+            let p2 = document.createElement("p");
+             p2.innerText="그런데 놀랍게도 이 고릴라는 사람의 말을 하는 것이 아닌가?";
+             document.querySelector("#text").append(p2)
+
+            let p3 = document.createElement("p");
+             p3.innerText="고릴라는 스스로를 '고릴라코'라고 소개했다.";
+             document.querySelector("#text").append(p3)  
+
+            let p4 = document.createElement("p");
+             p4.innerText="당신의 반응은?";
+             document.querySelector("#text").append(p4)
+
+            let btn1 = document.createElement("button");
+                btn1.setAttribute("id","ok");
+                btn1.innerText = "안녕 고릴라코?^^";
+                document.querySelector("#btn").append(btn1);
+
+                btn1.addEventListener("click",function(){
+                    location.href="goril2.html";
+                })
+            
+            let btn2 = document.createElement("button");
+                btn2.setAttribute("id","no");
+                btn2.innerText = "으악! 징그러워!";
+                document.querySelector("#btn").append(btn2);
+
+                btn2.addEventListener("click",function(){
+                   let lach = confirm("우호! 우호! 고릴라코가 화를 내기 시작했다... 지금이라도 싹싹 빌까요?")
+                   if(lach==true){location.href="goril2.html";}
+                   else{location.href="gameover.html";}
+                })
+            
+        })
     </script>
 </body>
 </html>
