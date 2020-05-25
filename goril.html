@@ -4,33 +4,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>goril</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
     <style>
         body{
             background-color: azure;
         }
-        #text{
-            background-color: white;
-            border: lightblue 1px solid;
-            width: 640px
-        }
-        p{
+        #all{
             text-align: center;
         }
-        #btn{
-         width: 600px;
-         text-align: center;
-        }
+
+
     </style>
 </head>
 <body>
-    <h1>고릴라코 미연시</h1>
-    <button id=start>시작하기</button>
-    <div id=images></div>
-    <div id=text></div>
-    <div id=btn>
+    <div id=all class="container">
+        <br>
+        <h1 class="h1">고릴라코 미연시</h1>
+        <br>
+        <button id=start class="btn btn-outline-secondary">시작하기</button>
         <br>
         <br>
+        <br>
+        <div id=images></div>
+        <div id=text></div>
+        <div id=btn>
+            <br>
+            <br>
+        </div>
+
     </div>
+
     <script>
         var cli = false
         document.querySelector("#start").addEventListener("click",function(){
@@ -60,22 +63,29 @@
 
             let btn1 = document.createElement("button");
                 btn1.setAttribute("id","ok");
+                btn1.setAttribute("class","btn btn-outline-secondary");
                 btn1.innerText = "안녕 고릴라코?^^";
                 document.querySelector("#btn").append(btn1);
 
                 btn1.addEventListener("click",function(){
+                    alert("고릴라코는 얼굴을 붉히며 당신을 바라보았다...")
                     location.href="goril2.html";
                 })
             
             let btn2 = document.createElement("button");
                 btn2.setAttribute("id","no");
+                btn2.setAttribute("class","btn btn-outline-secondary");
                 btn2.innerText = "으악! 징그러워!";
                 document.querySelector("#btn").append(btn2);
 
                 btn2.addEventListener("click",function(){
                    let lach = confirm("우호! 우호! 고릴라코가 화를 내기 시작했다... 지금이라도 싹싹 빌까요?")
-                   if(lach==true){location.href="goril2.html";}
-                   else{location.href="gameover.html";}
+                   if(lach==true){
+                       alert("다행히 고릴라코가 당신을 용서한 모양이다...")
+                       location.href="goril2.html";}
+                   else{
+                       alert("고릴라코는 더욱 분노하더니 결국 당신을 향해 돌진했다!")
+                       location.href="gameover.html";}
                 })
             
         })

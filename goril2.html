@@ -4,8 +4,89 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>goril2</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <style>
+        body{
+            background-color: azure;
+        }
+        div{
+            background-color: white;
+        }
+        #all{
+            text-align: center;
+        }
+        #insert:hover{
+            cursor: pointer;
+        }
+        .gorilaco{
+            color: red;
+        }
+        #btn button:hover{
+            cursor: pointer;
+        }
+
+    </style>
 </head>
 <body>
-    <h1>고릴라코 미연시</h1>
+    <div id="all" class="container">
+
+        <br>
+        <h1>고릴라코 미연시</h1>
+        <br>
+        <img src="images/2688858_orig.jpg" width="640">
+        <!--대충 이미지 밑에 상황설명, 그 밑에 채팅 입력창, 그 밑에 대화창, 그 밑에 다음으로 넘어가는 버튼-->
+        <br>
+        <br>
+        <div id="text">
+            <p>고릴라코는 몹시 기뻐하면서, 당신에게 이렇게 말한다.</p>
+            <p class="gorilaco">'우호! 고릴라코가 꿈에 그리던 반려자다 우호!'</p>
+            <p class="gorilaco">'고릴라코와 결혼해줘!'</p>
+        </div>
+        <br>
+        <div id="chat">
+            <input type="text" id="chat2" placeholder="당신의 대답은..." />
+            <button id="insert" class="btn btn-outline-secondary">전송</button>
+        </div>
+        <br>
+        <div id="chatresult">
+    
+        </div>
+        <br>
+        <div id="btn">
+            <button id=no class="btn btn-outline-secondary">끈기를 갖고 고릴라코를 설득해본다...</button>
+            <button id=ok class="btn btn-outline-secondary">대화를 포기하고 지금이라도 도망친다...</button>
+        </div>
+
+    </div>
+
+
+    <script>
+        document.querySelector("#insert").addEventListener("click", function(){
+            let chatext = document.querySelector("#chat2").value;
+            let sentchat = document.createElement("p");
+            let sentchat2 = document.createElement("p");
+            let sentchat3 = document.createElement("p");
+            sentchat2.setAttribute("id","gorilword");
+            sentchat2.setAttribute("style","color: red");
+            sentchat.innerText= chatext
+            sentchat2.innerText= "우호! 우호호!"
+            sentchat3.innerText= "고릴라코는 당신의 말에도 그저 괴성만을 내지를 뿐이다..."
+            document.querySelector("#chatresult").append(sentchat);
+            document.querySelector("#chatresult").append(sentchat2);
+            document.querySelector("#chatresult").append(sentchat3);
+        });
+
+
+        document.querySelector("#no").addEventListener("click", function(){
+            alert("끈기있는 당신의 모습에 고릴라코는 새삼 반한 모양이다...")
+            location.href="goril3.html";
+        });
+
+        document.querySelector("#ok").addEventListener("click", function(){
+            alert("이 미친 곳을 탈출하겠어! 라고 당신은 생각한 모양이지만, 유감... 고릴라코는 당신보다 훨씬 빨랐다!")
+            location.href="gameover.html";
+        });
+
+    </script>
 </body>
 </html>

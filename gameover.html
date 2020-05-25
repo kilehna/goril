@@ -4,15 +4,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>gameover</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <style>
+        body{
+            background-color: azure;
+        }
+        #all{
+            text-align: center;
+        }
+        h1{
+            color: red;
+            font-style: italic;
+        }
+        
+    </style>
 </head>
 <body>
-    <h1>게임 오버...</h1>
-    <h3>당신은 고릴라코의 마음을 얻지 못했다.</h3>
-    <h3>그 대가로 분노한 고릴라코에게 공격받고 말았다.</h3>
-    <img src="images/hqdefault.jpg">
-    <p>분노한 고릴라코는 당신의 앞에서 미친듯이 날뛰고 있다...</p>
-    <button id="replay">다시 시작</button>
-    <div id="uho"></div>
+    <div id="all" class="container">
+        <br>
+        <h1>게임 오버...</h1>
+        <br>
+        <h3>당신은 고릴라코의 마음을 얻지 못했다.</h3>
+        <h3>그 대가로 분노한 고릴라코에게 공격받고 말았다.</h3>
+        <br>
+        <img src="images/hqdefault.jpg">
+        <br>
+        <p>분노한 고릴라코는 당신의 앞에서 미친듯이 날뛰고 있다...</p>
+        <button id="replay" class="btn btn-outline-secondary">다시 시작</button>
+        <br>
+        <br>
+        <div id="uho"></div>
+
+    </div>
+   
 
     <script>
         document.querySelector("#replay").addEventListener("click",function(){
@@ -23,7 +47,7 @@
             let newsp = document.createElement("span");
             newsp.innerText="우호! 우호호! 우호! 우호호호! 우호! 우호!";
             document.querySelector("#uho").append(newsp)
-        }, 500);
+        }, 250);
     </script>
 </body>
 </html>
